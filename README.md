@@ -1,5 +1,4 @@
 
-# BITACADEMY 
 
 ## 1.소개
 
@@ -64,70 +63,34 @@
   ## 4. 주요기능
   ### - 회원
   + 회원가입
-  ![리드미용_서아-008](https://user-images.githubusercontent.com/71997900/110235350-ec285e80-7f72-11eb-8845-0ea63339245d.png)
+  ![image](https://user-images.githubusercontent.com/71998081/112373759-a9150c00-8d24-11eb-8f21-ddecab093cc4.png)
 
-  + 로그인
-  ![리드미용_서아-009](https://user-images.githubusercontent.com/71997900/110235353-ef234f00-7f72-11eb-8fc8-074036196264.png)
   
   ### - 타임라인
-  
-  ![리드미용_서아-010](https://user-images.githubusercontent.com/71997900/110235385-10843b00-7f73-11eb-85b1-04a56a373b61.png)
-  + 유저검색
-  ![리드미용_서아-011](https://user-images.githubusercontent.com/71997900/110235397-1ed25700-7f73-11eb-9803-87008d34fb9f.png)
-  + 게시글 검색
-  ![리드미용_서아-012](https://user-images.githubusercontent.com/71997900/110235409-2691fb80-7f73-11eb-87fe-f1429ed1e9ec.png)
+  ![image](https://user-images.githubusercontent.com/71998081/112374299-453f1300-8d25-11eb-9a2b-23f296ec0cd9.png)
+
 
   ### - 마이페이지
-  + 프로필
-  ![정현-010](https://user-images.githubusercontent.com/71624723/110286120-b72a1380-8027-11eb-999f-e9d4a2e962f3.png)
+  
   + 게시글 작성
-  ![정현-011](https://user-images.githubusercontent.com/71624723/110286122-b8f3d700-8027-11eb-807b-87f6172d60b1.png)
-  + 게시글 리스트
-  ![정현-012](https://user-images.githubusercontent.com/71624723/110286134-bf824e80-8027-11eb-85a3-aaf93321ae3c.png)
-  + 게시글 상세보기
-  ![정현-013](https://user-images.githubusercontent.com/71624723/110286144-c3ae6c00-8027-11eb-9b54-eb98a351a6c8.png)
-  + 지도
-  ![정현-014](https://user-images.githubusercontent.com/71624723/110286146-c5782f80-8027-11eb-8934-8ce02a895d57.png)
-  + 방명록 리스트
-  ![리드미-명지-016](https://user-images.githubusercontent.com/71998081/110289261-87313f00-802c-11eb-9642-25844399f6f3.jpg)
-  + 방명록 CRUD
-  ![리드미-명지-017](https://user-images.githubusercontent.com/71998081/110289455-cbbcda80-802c-11eb-82d9-336fe88e9980.jpg)
+  ![image](https://user-images.githubusercontent.com/71998081/112374388-63a50e80-8d25-11eb-9219-a0253d92233d.png)
+
+  + 게시글 리스트 
+  ![image](https://user-images.githubusercontent.com/71998081/112374494-846d6400-8d25-11eb-9bf6-a1ed9e9b8398.png)
+
+  
+  + 게시글 지도
+  ![image](https://user-images.githubusercontent.com/71998081/112374543-94854380-8d25-11eb-8eab-9076e48d9162.png)
+
+  + 방명록 
+  ![image](https://user-images.githubusercontent.com/71998081/112374640-b2eb3f00-8d25-11eb-8aa1-1e66d7b29229.png)
+
 
 
   ### - 채팅
   + WebSocket을 이용한 1:1 채팅
-  ![리드미용_서아-016](https://user-images.githubusercontent.com/71997900/110496011-6a822d80-8138-11eb-9c57-6cd56ec4ecd8.png)
-   ```c
-  public class ChattingHandler extends TextWebSocketHandler {
-  
-     private Map<String, WebSocketSession> users = new HashMap<String, WebSocketSession>();
-  
-  	@Override
-	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
-          String sessionId  = (String) session.getId();
+  ![image](https://user-images.githubusercontent.com/71998081/112374748-d0b8a400-8d25-11eb-95c4-cbfd22a356bb.png)
 
-		users.put(sessionId , session);
-        }
-      
-  	@Override
-	protected void handleTextMessage (WebSocketSession session, TextMessage message) throws Exception { 
-     
-          String sessionId  = (String) session.getId();
-          
-          Gson gson = new Gson();
-		Message mes = gson.fromJson(message.getPayload(), Message.class);
-
-		TextMessage sendmes = new TextMessage(gson.toJson(mes));
-        }
-     
-        @Override
-	public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
-     
-          String sessionId  = (String) session.getId(); 
-          users.remove(session.getId());
-        }
-   }
-  ```
   ![리드미용_서아-017](https://user-images.githubusercontent.com/71997900/110497018-6c98bc00-8139-11eb-9f1b-38b4aa57751e.png)
   + 회원 검색
   ![리드미용_서아-018](https://user-images.githubusercontent.com/71997900/110496119-85ed3880-8138-11eb-9f2b-5078a0703ca1.png)
